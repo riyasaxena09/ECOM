@@ -1,0 +1,12 @@
+.C{
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 40px;
+color: rgb(89, 145, 228);
+background-color: gray;
+margin-left: 43%;
+padding: 10px;
+font-weight: lighter;
+margin-top: 10px;
+}

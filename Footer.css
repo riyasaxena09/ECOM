@@ -1,0 +1,20 @@
+.F{
+    background-color: skyblue;
+    color: azure;
+    font-size: 80px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 20px;
+    height:150px;
+    
+}
+.icon{
+   width:40px; 
+   
+  
+}
+.ul{
+    display: flex;
+    list-style:none;
+}
