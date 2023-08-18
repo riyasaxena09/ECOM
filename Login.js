@@ -1,10 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react'
+import './Login.css';
+import { useContext } from 'react';
+import { Cartoon } from '../Comtext';
 import {  useNavigate } from 'react-router-dom';
+import Header from './Header';
 function Login(){
   const nav=useNavigate();
     const email=useRef();
     const pass=useRef();
-    
+ const {login,setlogin}=useContext(Cartoon);
     function submithandler(e){
 e.preventDefault();
 
@@ -35,8 +39,8 @@ return res.json().then((data)=>{
   }
 }).then((data)=>{
    console.log(data)
-   nav('/')
-
+   nav('/App')
+setlogin(true);
     }).catch((err)=>{
       alert(err.message);
     })
@@ -44,12 +48,14 @@ return res.json().then((data)=>{
     }
     return(
 <>
+<Header></Header>
 <form onSubmit={submithandler}>
-    <label>Email</label>
-    <input ref={email} type="email"></input>
-    <label>Password</label>
-    <input ref={pass} type="password"></input>
-<button>Login</button>
+   <div><label>Email:</label>
+    <input ref={email} type="email"></input></div> <br></br>
+   <div> <label>Password:</label>
+    <input ref={pass} type="password"></input></div> <br></br>
+    <div>
+<button>Login</button></div>
 </form>
 </>
     )
